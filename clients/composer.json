@@ -1,0 +1,19 @@
+{
+    "name": "valerij/clients",
+    "description": "Clients Database",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "":""
+        }
+    },
+    "authors": [
+        {
+            "name": "valerij79",
+            "email": "tumkevich@gmail.com"
+        }
+    ],
+    "require": {
+        "ramsey/uuid": "^4.7"
+    }
+}
