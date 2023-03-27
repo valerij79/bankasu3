@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <?php foreach(clients as $client) : ?>
+                        <?php foreach($clients as $client) : ?>
                         <li class="list-group-item">
                             <?= $client['name'] ?>
                             <?= $client['surname'] ?>
