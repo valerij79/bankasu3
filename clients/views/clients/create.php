@@ -17,9 +17,10 @@
                             <input type="text" class="form-control" name="surname">
                             <div class="form-text">Please add client surname here.</div>
                         </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="tt" name="tt">
-                            <label class="form-check-label" for="tt">Has TikTok account</label>
+                        <div class="mb-3">
+                            <label class="form-label">Personal ID</label>
+                            <input type="number" class="form-control" name="personal_id">
+                            <div class="form-text">Please add client Personal No. here.</div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

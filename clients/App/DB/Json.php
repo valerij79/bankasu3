@@ -1,8 +1,6 @@
 <?php
 namespace App\DB;
 
-// use Ramsey\Uuid\Uuid;
-
 class Json implements DataBase {
 
     private $data;
@@ -20,7 +18,6 @@ class Json implements DataBase {
     {
         file_put_contents(__DIR__ .'/data.json', json_encode($this->data));
     }
-
 
     function create(array $clientData) : void
     {

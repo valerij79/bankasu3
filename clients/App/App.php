@@ -9,7 +9,6 @@ class App {
 
     public static function process()
     {
-        
         session_start();
 
         $url = explode('/', $_SERVER['REQUEST_URI']);
@@ -23,7 +22,6 @@ class App {
     {
         $method = $_SERVER['REQUEST_METHOD'];
 
-
         if ($method == 'GET' && count($url) == 1 && $url[0] === 'login') {
             return (new LoginController)->show();
         }
@@ -36,12 +34,9 @@ class App {
             return (new LoginController)->logout();
         }
 
-
         if ($method == 'GET' && count($url) == 1 && $url[0] === '') {
             return (new HomeController)->home();
         }
-
-
 
         if ($method == 'GET' && count($url) == 2 && $url[0] === 'clients' && $url[1] === 'create') {
             return (new ClientsController)->create();
@@ -71,7 +66,21 @@ class App {
             return (new ClientsController)->delete($url[2]);
         }
 
+        if ($method == 'GET' && count($url) == 4 && $url[0] === 'clients' && $url[1] === 'show' && $url[3] === 'addFunds') {
+            return (new ClientsController)->addFunds($url[2]);
+        }
 
+        if ($method == 'POST' && count($url) == 4 && $url[0] === 'clients' && $url[1] === 'show' && $url[3] === 'addFunds') {
+            return (new ClientsController)->storeAddFunds($url[2]);
+        }
+
+        if ($method == 'GET' && count($url) == 4 && $url[0] === 'clients' && $url[1] === 'show' && $url[3] === 'removeFunds') {
+            return (new ClientsController)->removeFunds($url[2]);
+        }
+
+        if ($method == 'POST' && count($url) == 4 && $url[0] === 'clients' && $url[1] === 'show' && $url[3] === 'removeFunds') {
+            return (new ClientsController)->storeRemoveFunds($url[2]);
+        }
 
         else {
             return  '<h1>404 PAGE NOT FOUND</h1>';
