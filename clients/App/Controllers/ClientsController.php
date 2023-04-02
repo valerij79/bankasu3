@@ -109,7 +109,7 @@ class ClientsController
         $data['surname'] = $_POST['surname'];
         $data['personal_id'] = $_POST['personal_id'];
         $data['funds'] = 0;
-        $data['account_no'] = 'LT' . rand(10, 99) . ' 7300 0' . rand(100, 999) . ' ' . rand(1000, 9999) . ' ' . rand(1000, 9999);
+        $data['account_no'] = 'LT'.rand(10, 99).'73000'.rand(100, 999).rand(1000, 9999).rand(1000, 9999);
         (new Json)->create($data);
         Messages::msg()->addMessage('New client was created', 'success');
         return App::redirect('clients');
